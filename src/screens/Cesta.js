@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Image, Dimensions, Text, View } from 'react-native';
 
+import Texto from '../components/Texto'
+
 import topo from '../../assets/topo.png'
 import logo from '../../assets/logo.png'
 
@@ -8,25 +10,25 @@ const width = Dimensions.get('screen').width
 
 export default function Cesta(){
     return <>
-        <Image source={topo} style={style.topo} />
-        <Text style={style.title}>Detalhe da cesta</Text>
+        <Image source={topo} style={styles.topo} />
+        <Texto style={styles.title}>Detalhe da cesta</Texto>
 
-        <View style={style.cesta}>
-            <Text style={style.name}>Cesta de Verduras</Text>
-            <View style={style.farm}>
-                <Image style={style.farmImage} source={logo}/>
-                <Text style={style.farmName}>Jenny Jack Farm</Text>
+        <View style={styles.cesta}>
+            <Texto style={styles.name}>Cesta de Verduras</Texto>
+            <View style={styles.farm}>
+                <Image style={styles.farmImage} source={logo}/>
+                <Texto style={styles.farmName}>Jenny Jack Farm</Texto>
             </View>
-            <Text style={style.description}>
+            <Texto style={styles.description}>
                 Uma cesta com pordutos selecionados cuidadosamente 
                 da fazenda direto para sua cozinha
-            </Text>
-            <Text style={style.price}>R$ 40,00</Text>
+            </Texto>
+            <Texto style={styles.price}>R$ 40,00</Texto>
         </View>
     </>
 } 
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     topo: {
         width: '100%',
         height: 578 / 768 * width
@@ -49,7 +51,7 @@ const style = StyleSheet.create({
         fontSize: 26,
         lineHeight: 42,
         color: '#464646',
-        fontFamily: "MontserratBold"
+        fontWeight: 'bold'
     },
     farm: {
         flexDirection: 'row',
@@ -62,8 +64,7 @@ const style = StyleSheet.create({
     farmName: {
         fontSize: 16,
         lineHeight: 26,
-        marginLeft: 12,
-        fontFamily: "MontserratRegular"   
+        marginLeft: 12
     },
     description: {
         color: '#A3A3A3',
