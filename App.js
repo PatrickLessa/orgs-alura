@@ -1,6 +1,8 @@
 import React from 'react'
 import { StatusBar, SafeAreaView, View } from 'react-native';
-import Cesta from './src/screens/Cesta';
+
+import Cesta from './src/screens/Cesta/index'
+import mock from './src/mocks/cesta'
 
 import { 
   useFonts,
@@ -22,7 +24,7 @@ export default function App() {
   return (
     <SafeAreaView>
       <StatusBar/>
-      <Cesta/>
+      <Cesta {...mock}/>
     </SafeAreaView>
   );
 }
