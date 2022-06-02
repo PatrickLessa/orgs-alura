@@ -2,16 +2,19 @@ import React from 'react'
 import {View, StyleSheet, Image} from 'react-native'
 
 import Texto from '../../../components/Texto'
+import Botao from '../../../components/Botao'
 
-export default function Detalhes({name, farmImage, farmName, description, price}){
+export default function Detalhes({name, farmImage, farmName, description, price, botao}){
     return <>
-            <Texto style={styles.name}>{name}</Texto>
+            <Texto style={styles.name}>{ name }</Texto>
             <View style={styles.farm}>
-                <Image style={styles.farmImage} source={farmImage}/>
-                <Texto style={styles.farmName}>{farmName}</Texto>
+                <Image style={styles.farmImage} source={ farmImage }/>
+                <Texto style={styles.farmName}>{ farmName }</Texto>
             </View>
-            <Texto style={styles.description}>{description}</Texto>
-            <Texto style={styles.price}>{price}</Texto>
+            <Texto style={styles.description}>{ description }</Texto>
+            <Texto style={styles.price}>{ price }</Texto>
+
+            <Botao text={botao} alternativeStyle={styles.button}/>
         </>
 }
 
@@ -46,5 +49,8 @@ const styles = StyleSheet.create({
         fontSize: 26,
         lineHeight: 42,
         marginTop: 8
+    },
+    button: {
+        marginTop: 16
     }
 })
